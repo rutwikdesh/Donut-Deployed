@@ -64,9 +64,10 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "/auth/register",
+      "https://api.github.com/auth/register",
       {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: formData,
       }
     );
