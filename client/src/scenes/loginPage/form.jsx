@@ -68,7 +68,6 @@ const Form = () => {
       {
         method: "POST",
         body: formData,
-        headers: { "Content-Type": "multipart/form-data" },
       }
     );
     const savedUser = await savedUserResponse.json();
@@ -241,9 +240,9 @@ const Form = () => {
               sx={{
                 m: "2rem 0",
                 p: "1rem",
-                backgroundColor: "black",
-                color: "white",
-                "&:hover": { color: "black" },
+                backgroundColor: palette.primary.main,
+                color: palette.background.alt,
+                "&:hover": { color: palette.primary.main },
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
@@ -255,10 +254,10 @@ const Form = () => {
               }}
               sx={{
                 textDecoration: "underline",
-                color: "black",
+                color: palette.primary.main,
                 "&:hover": {
                   cursor: "pointer",
-                  color: "grey",
+                  color: palette.primary.light,
                 },
               }}
             >
