@@ -25,7 +25,7 @@ const PostWidget = ({ postId, postUserId, name, description, location, picturePa
   const primary = "rgb(249, 98, 123)";
 
   const patchLike = async () => {
-    const response = await fetch(`https://api.github.com/posts/${postId}/like`, {
+    const response = await fetch(`/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
