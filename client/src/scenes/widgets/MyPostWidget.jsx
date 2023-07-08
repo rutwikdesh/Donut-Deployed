@@ -47,21 +47,27 @@ const MyPostWidget = ({ picturePath }) => {
     if (image) {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
-      const response = await fetch(`http://localhost:3001/posts/picture`, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-        body: formData,
-      });
+      const response = await fetch(
+        `http://donut-v0i4.onrender.com/posts/picture`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+          body: formData,
+        }
+      );
       const posts = await response.json();
       dispatch(setPosts({ posts }));
     } else if (audio) {
       formData.append("audio", audio);
       formData.append("audioPath", audio.name);
-      const response = await fetch(`http://localhost:3001/posts/audio`, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-        body: formData,
-      });
+      const response = await fetch(
+        `http://donut-v0i4.onrender.com/posts/audio`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+          body: formData,
+        }
+      );
       const posts = await response.json();
       dispatch(setPosts({ posts }));
     }

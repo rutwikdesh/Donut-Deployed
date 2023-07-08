@@ -50,14 +50,17 @@ const PostWidget = ({
   const primary = "rgb(249, 98, 123)";
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userId: loggedInUserId }),
-    });
+    const response = await fetch(
+      `http://donut-v0i4.onrender.com/posts/${postId}/like`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: loggedInUserId }),
+      }
+    );
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };
@@ -65,7 +68,7 @@ const PostWidget = ({
   const addComment = async () => {
     if (comment != "" && comment != null) {
       const response = await fetch(
-        `http://localhost:3001/posts/${postId}/comment`,
+        `http://donut-v0i4.onrender.com/posts/${postId}/comment`,
         {
           method: "PATCH",
           headers: {
@@ -98,7 +101,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${picturePath}`}
+          src={`http://donut-v0i4.onrender.com/assets/${picturePath}`}
         />
       )}
       {audioPath && (
@@ -118,7 +121,7 @@ const PostWidget = ({
 
           <audio controls>
             <source
-              src={`http://localhost:3001/assets/${audioPath}`}
+              src={`http://donut-v0i4.onrender.com/assets/${audioPath}`}
               type="audio/mp3"
             />
             Your browser does not support the audio element.
