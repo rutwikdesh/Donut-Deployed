@@ -48,7 +48,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
       const response = await fetch(
-        `http://donut-v0i4.onrender.com/posts/picture`,
+        `https://donut-v0i4.onrender.com/posts/picture`,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },
@@ -61,7 +61,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("audio", audio);
       formData.append("audioPath", audio.name);
       const response = await fetch(
-        `http://donut-v0i4.onrender.com/posts/audio`,
+        `https://donut-v0i4.onrender.com/posts/audio`,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },

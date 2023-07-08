@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`http://donut-v0i4.onrender.com/assets/${image}`}
+        src={`https://donut-v0i4.onrender.com/assets/${image}`}
       />
     </Box>
   );

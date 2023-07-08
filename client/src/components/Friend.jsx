@@ -24,7 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://donut-v0i4.onrender.com/users/${_id}/${friendId}`,
+      `https://donut-v0i4.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

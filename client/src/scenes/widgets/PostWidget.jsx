@@ -51,7 +51,7 @@ const PostWidget = ({
 
   const patchLike = async () => {
     const response = await fetch(
-      `http://donut-v0i4.onrender.com/posts/${postId}/like`,
+      `https://donut-v0i4.onrender.com/posts/${postId}/like`,
       {
         method: "PATCH",
         headers: {
@@ -68,7 +68,7 @@ const PostWidget = ({
   const addComment = async () => {
     if (comment != "" && comment != null) {
       const response = await fetch(
-        `http://donut-v0i4.onrender.com/posts/${postId}/comment`,
+        `https://donut-v0i4.onrender.com/posts/${postId}/comment`,
         {
           method: "PATCH",
           headers: {
@@ -101,7 +101,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://donut-v0i4.onrender.com/assets/${picturePath}`}
+          src={`https://donut-v0i4.onrender.com/assets/${picturePath}`}
         />
       )}
       {audioPath && (
@@ -121,7 +121,7 @@ const PostWidget = ({
 
           <audio controls>
             <source
-              src={`http://donut-v0i4.onrender.com/assets/${audioPath}`}
+              src={`https://donut-v0i4.onrender.com/assets/${audioPath}`}
               type="audio/mp3"
             />
             Your browser does not support the audio element.

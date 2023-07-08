@@ -9,7 +9,7 @@ const AdvertWidget = () => {
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
   const customSponsor = {
-    img: "http://donut-v0i4.onrender.com/assets/customSponsored.jpg",
+    img: "https://donut-v0i4.onrender.com/assets/customSponsored.jpg",
     createdAt: Date.now() + 8000,
     lifeSpan: 8000,
     title: "Yum's Patties",
@@ -19,7 +19,7 @@ const AdvertWidget = () => {
 
   const [images, setImages] = useState([
     {
-      img: "http://donut-v0i4.onrender.com/assets/sponsored.jpg",
+      img: "https://donut-v0i4.onrender.com/assets/sponsored.jpg",
       createdAt: Date.now(),
       lifeSpan: 8000,
       title: "MusicHub",
@@ -27,7 +27,7 @@ const AdvertWidget = () => {
       desc: "Listen to all your faviourite without any ad breaks only on Music Hub.",
     },
     {
-      img: "http://donut-v0i4.onrender.com/assets/sponsored2.jpg",
+      img: "https://donut-v0i4.onrender.com/assets/sponsored2.jpg",
       createdAt: Date.now() + 8000,
       lifeSpan: 8000,
       title: "Juicy Little",
