@@ -79,24 +79,32 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch(
-      "https://donut-v0i4.onrender.com/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      }
-    );
-    const loggedIn = await loggedInResponse.json();
-    onSubmitProps.resetForm();
-    if (loggedIn) {
-      dispatch(
-        setLogin({
-          user: loggedIn.user,
-          token: loggedIn.token,
-        })
+    try {
+      const loggedInResponse = await fetch(
+        "https://donut-v0i4.onrender.com/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }
       );
-      navigate("/home");
+      const loggedIn = await loggedInResponse.json();
+      // onSubmitProps.resetForm();
+      if (loggedInResponse.status === 200) {
+        dispatch(
+          setLogin({
+            user: loggedIn.user,
+            token: loggedIn.token,
+          })
+        );
+        navigate("/home");
+      } else {
+        throw loggedIn.msg;
+      }
+    } catch (error) {
+      onSubmitProps.setErrors({
+        email: "Invalid email or password",
+      });
     }
   };
 
@@ -110,6 +118,13 @@ const Form = () => {
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
       validationSchema={isLogin ? loginSchema : registerSchema}
+      validate={(values) => {
+        let errors = {};
+        if (values.password.length < 5) {
+          errors.password = "The password should be atleast 5 characters long";
+        }
+        return errors;
+      }}
     >
       {({
         values,
